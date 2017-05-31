@@ -99,6 +99,7 @@
             <RelativeLayout
                 android:id="@+id/rl_down"
                 style="@style/mine_lin_style"
+                android:visibility="gone"
                 android:gravity="center_vertical">
 
 

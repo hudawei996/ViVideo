@@ -22,7 +22,7 @@ import rx.functions.Action1;
  */
 public class WelcomePresenter extends RxPresenter implements WelcomeContract.Presenter {
     WelcomeContract.View mView;
-    private static final int COUNT_DOWN_TIME = 2200;
+    private static final int COUNT_DOWN_TIME = 2000;
 
     public WelcomePresenter(@NonNull WelcomeContract.View oneView) {
         mView = Preconditions.checkNotNull(oneView);
@@ -32,26 +32,6 @@ public class WelcomePresenter extends RxPresenter implements WelcomeContract.Pre
 
     @Override
     public void getWelcomeData() {
-//        Subscription rxSubscription = RetrofitHelper.getVideoApi().getHomePage()
-//                .compose(RxUtil.<VideoHttpResponse<VideoRes>>rxSchedulerHelper())
-//                .compose(RxUtil.<VideoRes>handleResult())
-//                .subscribe(new Action1<VideoRes>() {
-//                    @Override
-//                    public void call(final VideoRes res) {
-//                        if (res != null) {
-//                            if (mView.isActive()) {
-//                                mView.showContent(res);
-//                            }
-//                        }
-//                        startCountDown();
-//                    }
-//                }, new Action1<Throwable>() {
-//                    @Override
-//                    public void call(Throwable throwable) {
-//                        startCountDown();
-//                    }
-//                });
-//        addSubscribe(rxSubscription);
         mView.showContent(getImgData());
         startCountDown();
     }
@@ -70,14 +50,7 @@ public class WelcomePresenter extends RxPresenter implements WelcomeContract.Pre
 
     private List<String> getImgData() {
         List<String> imgs = new ArrayList<>();
-        imgs.add("file:///android_asset/a.jpg");
-        imgs.add("file:///android_asset/b.jpg");
         imgs.add("file:///android_asset/c.jpg");
-//        imgs.add("file:///android_asset/d.jpg");
-        imgs.add("file:///android_asset/e.jpg");
-
-        imgs.add("file:///android_asset/f.jpg");
-        imgs.add("file:///android_asset/g.jpg");
         return imgs;
     }
 

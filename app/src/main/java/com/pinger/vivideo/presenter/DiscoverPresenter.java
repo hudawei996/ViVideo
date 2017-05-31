@@ -25,7 +25,7 @@ public class DiscoverPresenter extends RxPresenter implements DiscoverContract.P
     DiscoverContract.View mView;
     final String catalogId = "402834815584e463015584e53843000b";
 
-    int max = 30;
+    int max =15;
     int min = 1;
 
 

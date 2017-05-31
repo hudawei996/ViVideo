@@ -71,8 +71,7 @@ public class WelcomeView extends RootView<WelcomeContract.Presenter> implements 
     @Override
     public void showContent(List<String> list) {
         if (list != null) {
-            int page = StringUtils.getRandomNumber(0, list.size() - 1);
-            ImageLoader.load(mContext, list.get(page), ivWelcomeBg);
+            ImageLoader.load(mContext, list.get(0), ivWelcomeBg);
             ivWelcomeBg.animate().scaleX(1.12f).scaleY(1.12f).setDuration(2000).setStartDelay(100).start();
         }
 
