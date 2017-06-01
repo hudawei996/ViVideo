@@ -39,7 +39,6 @@ public class MainActivity extends BaseActivity implements ColorChooserDialog.Col
     public void onColorSelection(@NonNull ColorChooserDialog dialog, @ColorInt int selectedColor) {
         if (selectedColor == ThemeUtils.getThemeColor(this, R.attr.colorPrimary))
             return;
-
         if (selectedColor == getResources().getColor(R.color.colorBluePrimary)) {
             this.setTheme(R.style.BlueTheme);
             PreUtils.setCurrentTheme(this, Theme.Blue);
